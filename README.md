@@ -1,4 +1,4 @@
 # stin_prj
 Semestral work STIN
 
-<img src="./STIN_chatbot.png" alt="Use case diagram" width="800" height="500">
+<img src="./STIN_chatbot.png" alt="Use case diagram" width="1000" height="500">
