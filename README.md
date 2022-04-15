@@ -11,9 +11,9 @@ Formáty otázek:
 2. Dnešní datum
 3. Momentální kurz České Koruny vůči Euru
 
-Příklady koverzace: \n
-Q: "What's your name?" A: "My name is Bot, nice to meet You."\n
-Q: "What's today's date?" A: "Today is April 4th 2022."\n
+Příklady koverzace:  
+Q: "What's your name?" A: "My name is Bot, nice to meet You."  
+Q: "What's today's date?" A: "Today is April 4th 2022."  
 Q: "Show me exchange rate of EUR." A: "Current exchange rate of EUR is 24,420 Kc."
 
 Funkční vlastnosti:
