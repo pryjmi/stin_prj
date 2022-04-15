@@ -1,6 +1,6 @@
 # Semestrální projekt STIN
 ## Zadání
-Cílem projektu je vytvořit chat bota, který musí umět:
+### Cílem projektu je vytvořit chat bota, který musí umět:
 1. Přijmout a zpracovat vstupní data (3 otázky)
 2. Vygenerovat výstupní data (odpovědi na zadané otázky)
 
