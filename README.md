@@ -9,17 +9,17 @@
 
 ### Formáty otázek:
 1. Jméno bota
-2. Dnešní datum
+2. Čas
 3. Momentální kurz České Koruny vůči Euru
 
 ### Příklady koverzace:  
 1. Q: "What's your name?" A: "My name is Bot, nice to meet You."  
-2. Q: "What's today's date?" A: "Today is April 4th 2022."  
+2. Q: "What time is now?" A: "Now is 12:03:53."  
 3. Q: "Show me exchange rate of EUR." A: "Current exchange rate of EUR is 24,420 Kc."
 
 ### Funkční vlastnosti:
 1. Pokud bude otázka obsahovat "your" a "name", bot odpoví svým jménem.
-2. Pokud bude otázka obsahovat "today" nebo "date", bot odpoví dnešním datumem.
+2. Pokud bude otázka obsahovat "time", bot odpoví serverovým časem.
 3. Pokud bude otázka obsahovat "exchange", bot stáhne výpis kurzu ze stránek ČNB, extrahuje z něj kurz Eura a vypíše ho.
 4. Pokud bude otázka obsahovat aktivační slova z různých formátů otázek, bot odpoví na všechny s následujícím pořadí: Jméno, Datum, Kurz.  (aktivační slovo - slovo, které bude bot hledat, aby vygeneroval odpověď, slovo v uvozovkách)
 
