@@ -20,7 +20,7 @@ msg = tk.StringVar()
 msgbox = tk.Entry(window, textvariable=msg, width=39)
 msgbox.place(x=30, y=430)
 
-lstbx = tk.Listbox(window, height=22, width=48, yscroll=true)
+lstbx = tk.Listbox(window, height=22, width=48, yscroll=True)
 lstbx.place(x=31, y=40)
 
 
