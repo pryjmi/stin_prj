@@ -19,23 +19,23 @@ def handle(conn, addr):
     connected = True
     while connected:
         if msg_length := conn.recv(HEADER).decode(FORMAT):
-          msg_length = int(msg_length)
-          msg = conn.recv(msg_length).decode(FORMAT)
-          if msg == DISCONNECT_MESSAGE:
-              connected = False
-          else:
-              msg = str(answer(str2list(rem_sym(msg))))
-          msg = msg.replace("', ", "\n")
-          msg = msg.replace("['", "")
-          msg = msg.replace("']", "")
-          msg = msg.replace("\n'", "\n")
-          msg = msg.replace("\\n", "\n")
-          msg = msg.replace('["', "")
-          msg = msg.replace('."]', "")
+              msg_length = int(msg_length)
+              msg = conn.recv(msg_length).decode(FORMAT)
+              if msg == DISCONNECT_MESSAGE:
+                    connected = False
+              else:
+                  msg = str(answer(str2list(rem_sym(msg))))
+              msg = msg.replace("', ", "\n")
+              msg = msg.replace("['", "")
+              msg = msg.replace("']", "")
+              msg = msg.replace("\n'", "\n")
+              msg = msg.replace("\\n", "\n")
+              msg = msg.replace('["', "")
+              msg = msg.replace('."]', "")
 
-          print(f"[{addr}] {msg}")
-          t.sleep(1)
-          conn.send(msg.encode(FORMAT))
+              print(f"[{addr}] {msg}")
+              t.sleep(1)
+              conn.send(msg.encode(FORMAT))
 
     conn.close()
 
@@ -45,7 +45,7 @@ def start():
     print(f"[LISTENING] server is listening on {SERVER}")
     while True:
         conn, addr = server.accept()
-        thread = threading.Thread(target = handle, args = (conn, addr))
+        thread = threading.Thread(target=handle, args=(conn, addr))
         thread.start()
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")
 
