@@ -23,6 +23,7 @@ msgbox.place(x=30, y=430)
 lstbx = tk.Listbox(window, height=22, width=48, yscroll= rue)
 lstbx.place(x=31, y=40)
 
+
 def send_msg():
     msg = msgbox.get()
     lstbx.insert(tk.END, '(You)')
@@ -34,6 +35,7 @@ def send_msg():
     lstbx.see('end')
     return msg
 
+
 def recv():
     received = receive()
     lstbx.insert(tk.END, "(Bot)")
@@ -41,9 +43,10 @@ def recv():
     for r in receivedlist:
       lstbx.insert(tk.END, r)
     lstbx.insert(tk.END, "")
-  
+
 send_btn = tk.Button(window, text="Send", bg="grey", fg="black", command=send_msg)
 send_btn.place(x=400, y=429)
+
 
 def send(msg):
     message = msg.encode(FORMAT)
@@ -52,6 +55,7 @@ def send(msg):
     send_length += b" " * (HEADER - len(send_length))
     client.send(send_length)
     client.send(message)
+
 
 def receive():
     return client.recv(1024).decode(FORMAT)
