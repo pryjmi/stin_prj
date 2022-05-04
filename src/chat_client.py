@@ -1,5 +1,5 @@
-import tkinter as tk
 import socket
+import tkinter as tk
 
 HEADER = 64
 PORT = 5050
@@ -20,7 +20,7 @@ msg = tk.StringVar()
 msgbox = tk.Entry(window, textvariable=msg, width=39)
 msgbox.place(x=30, y=430)
 
-lstbx = tk.Listbox(window, height=22, width=48, yscroll=rue)
+lstbx = tk.Listbox(window, height=22, width=48, yscroll=true)
 lstbx.place(x=31, y=40)
 
 
