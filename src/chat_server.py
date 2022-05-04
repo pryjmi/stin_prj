@@ -6,7 +6,11 @@ import bs4
 
 FORMAT = "utf8"
 ERROR_MSG = 'Invalid command. Please type "help" for list of commands.'
-HELP_MSG = 'Your sentence must contain keywords.\nList of keywords:\n"your" and "name" to receive bots name\n"time" and "now" to receive current servers time\n"euro" to receive current exchange rate of 1 euro\nFor showing this list type "help".'
+HELP_MSG = 'Your sentence must contain keywords.\nList of keywords:\n
+"your" and "name" to receive bots name\n
+"time" and "now" to receive current servers time\n
+"euro" to receive current exchange rate of 1 euro\n
+For showing this list type "help".'
 
 
 def download():
@@ -35,8 +39,7 @@ def download():
         # cuts string from last occurrence of '|' to end of string
         start = rate.rfind("|")
         if len(rate) > start:
-            rate = rate[start + 1 :]
-
+            rate = rate[start + 1:]
 
         ratelist.append(": ".join((date, str(rate))))
     return ratelist
