@@ -15,30 +15,30 @@ def download():
     """
     ratelist = []
     for day in range(7):
-          date = dt2.date.today() - dt2.timedelta(days=day)
-          date = dt.strftime(date, format="%d.%m.%Y")
-          url = f"https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt?date={date}"
-          page = str(urllib.request.urlopen(url).read())
-          soup = bs4.BeautifulSoup(page, features="html.parser")
-          rate =  soup.get_text()
+        date = dt2.date.today() - dt2.timedelta(days=day)
+        date = dt.strftime(date, format="%d.%m.%Y")
+        url = f"https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt?date={date}"
+        page = str(urllib.request.urlopen(url).read())
+        soup = bs4.BeautifulSoup(page, features="html.parser")
+        rate =  soup.get_text()
 
-          # finds occurrence of 'euro'
-          start = rate.find("euro")
+        # finds occurrence of 'euro'
+        start = rate.find("euro")
 
-          # cuts string from 'euro' to first occurrence of '\n'
-          if len(rate) > start:
-              rate = rate[:0] + rate[start::]
-          end = rate.find("\\n")
-          if len(rate) > end:
-              rate = rate[:end]
+        # cuts string from 'euro' to first occurrence of '\n'
+        if len(rate) > start:
+            rate = rate[:0] + rate[start::]
+        end = rate.find("\\n")
+        if len(rate) > end:
+            rate = rate[:end]
 
-          # cuts string from last occurrence of '|' to end of string
-          start = rate.rfind("|")
-          if len(rate) > start:
-              rate = rate[start + 1:]
+        # cuts string from last occurrence of '|' to end of string
+        start = rate.rfind("|")
+        if len(rate) > start:
+            rate = rate[start + 1:]
 
 
-          ratelist.append(": ".join((date, str(rate))))
+        ratelist.append(": ".join((date, str(rate))))
     return ratelist
 rate = download()
 
