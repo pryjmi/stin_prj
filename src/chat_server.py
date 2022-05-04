@@ -41,11 +41,13 @@ def download():
     return ratelist
 rate = download()
 
+
 def rem_sym(q):
     """
     Removes illegal characters
     """
     return q.strip(".!?:-_|")
+
 
 def str2list(str):
     """
@@ -53,6 +55,7 @@ def str2list(str):
     """
     str = str.lower()
     return list(str.split(" "))
+
 
 def answer(question):
     time = dt.time(dt.now()).replace(microsecond = 0)
