@@ -22,7 +22,7 @@ def handle(conn, addr):
             msg_length = int(msg_length)
             msg = conn.recv(msg_length).decode(FORMAT)
             if msg == DISCONNECT_MESSAGE:
-                  connected = False
+                connected = False
             else:
                 msg = str(answer(str2list(rem_sym(msg))))
             msg = msg.replace("', ", "\n")
@@ -49,6 +49,6 @@ def start():
         thread.start()
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")
 
-        
+
 print("[STARTING] server is starting...")
 start()
