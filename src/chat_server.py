@@ -38,7 +38,7 @@ def download():
 
 
           ratelist.append(": ".join((date, str(rate))))
-        return ratelist
+      return ratelist
 rate = download()
 
 
