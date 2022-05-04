@@ -20,7 +20,7 @@ def download():
         url = f"https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt?date={date}"
         page = str(urllib.request.urlopen(url).read())
         soup = bs4.BeautifulSoup(page, features="html.parser")
-        rate =  soup.get_text()
+        rate = soup.get_text()
 
         # finds occurrence of 'euro'
         start = rate.find("euro")
@@ -35,11 +35,13 @@ def download():
         # cuts string from last occurrence of '|' to end of string
         start = rate.rfind("|")
         if len(rate) > start:
-            rate = rate[start + 1:]
+            rate = rate[start + 1 :]
 
 
         ratelist.append(": ".join((date, str(rate))))
     return ratelist
+
+
 rate = download()
 
 
