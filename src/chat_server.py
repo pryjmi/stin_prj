@@ -1,7 +1,8 @@
-from datetime import datetime as dt
 import datetime as dt2
-import bs4
 import urllib.request
+from datetime import datetime as dt
+
+import bs4
 
 FORMAT = "utf8"
 ERROR_MSG = 'Invalid command. Please type "help" for list of commands.'
