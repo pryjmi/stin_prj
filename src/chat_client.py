@@ -44,6 +44,7 @@ def recv():
         lstbx.insert(tk.END, r)
     lstbx.insert(tk.END, "")
 
+
 send_btn = tk.Button(window, text="Send", bg="grey", fg="black", command=send_msg)
 send_btn.place(x=400, y=429)
 
